@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('/createUser', [\App\Http\Controllers\UserController::class, 'createUser'])->name('createUser');
+Route::get('/getUsers', [\App\Http\Controllers\UserController::class, 'getUsers'])->name('getUsers');
+
